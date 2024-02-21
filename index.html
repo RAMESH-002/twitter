@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinema Aura</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Hide all sections except for the home section initially
+      document.querySelectorAll('section:not(#home)').forEach(function(section) {
+        section.style.display = 'none';
+      });
+  
+      // Smooth scrolling for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+  
+          const targetId = this.getAttribute('href').slice(1);
+          const targetSection = document.getElementById(targetId);
+  
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+  
+      // Add click event listeners to navigation links
+      document.querySelectorAll('nav a').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent default link behavior
+  
+          var targetId = this.getAttribute('href').slice(1); // Get the target section ID
+          var targetSection = document.getElementById(targetId);
+  
+          // Hide all sections
+          document.querySelectorAll('section').forEach(function(section) {
+            section.style.display = 'none';
+          });
+  
+          // Display the target section
+          targetSection.style.display = 'block';
+        });
+      });
+    });
+  </script>
+  
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Cinema Aura</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <!-- You can add more navigation items here -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="section">
+    <div class="container">
+      <h2>Welcome to Cinema Aura</h2>
+      <!-- Add content for the home section here -->
+      Welcome to Cinema Aura, your vibrant online destination for all things cinema. Dive into our carefully curated movie collections, explore in-depth movie details, and discover the magic of filmmaking through exclusive interviews and behind-the-scenes content. Stay up to date with the latest movie news and engage with fellow movie enthusiasts in our community forums. Get ready to embark on a cinematic journey like no other at Cinema Aura - Where Movies Come Alive.
+    </div>
+  </section>
+
+  <section id="reviews" class="section">
+    <div class="container">
+      <h2>Reviews</h2>
+      <!-- Add content for the reviews section here -->
+      Stay updated with the latest news and gossips from the world of cinema with our 'News and Updates' section. From behind-the-scenes stories to interviews with your favorite actors, we bring you all the juicy details.
+    </div>
+  </section>
+
+  <section id="news" class="section">
+    <div class="container">
+      <h2>News</h2>
+      <!-- Add content for the news section here -->
+      For those who prefer to stay in and watch movies, we have the 'Top Picks' section. Here, you can find a curated list of must-watch movies, ranging from classics to the latest releases. Our team of movie buffs carefully selects these movies to ensure that you have the best viewing experience.
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <!-- Add content for the contact section here -->
+      At Cinema Aura, we believe that movies are best enjoyed when shared with others. That's why we have a 'Community' section where you can connect with other movie lovers, discuss your favorite films, and even participate in fun movie-related activities.
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Cinema Aura. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
